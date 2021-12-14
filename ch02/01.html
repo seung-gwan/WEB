@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 숫자형 (정수/실수/지수형)
+        var num1= 10;
+        var num2= 10.2;
+        var num3= 3.e6;
+        document.write(num1+num2+num3+"<hr>");
+        // 문자열
+        var str1="Hello World<br>";
+        var str2='Hello World<br>';
+        document.write(str1+str2);
+        var str3="I say 'Hello'";
+        document.write(str3);
+        // 숫자 + 문자열
+        document.write("777" + 5+"<br>"); //문자열 + 숫자
+        document.write(5+6+"777"+6+6+"<br>");
+        document.write(5+"777"+6);
+        document.write("<hr>");
+        // Boolean
+        var n1=100;
+        var n2='100';
+        document.write("n1 (100)==n2 ('100') ? : " + (n1==n2)+ "<br>");
+        document.write("n1===n2 ? : " + (n1===n2));
+        document.write("<hr>");
+        //typeof
+        document.write(typeof 10);
+        document.write("<br>");
+        document.write(typeof "10");
+        document.write("<br>");
+        document.write(typeof tmp);
+        document.write("<br>");
+        document.write(typeof null);
+        document.write("<hr>");
+        //객체타입
+        var dog = {
+            name:"Happy", 
+            age:3, 
+            kind:"dog",
+            sound:function(){alert("멍멍!!");},
+            shktail:function(){alert("꼬리를 흔듭니다.");}
+        };
+        document.write(dog.name + "<br>");
+        document.write(dog.age + "<br>");
+        document.write(dog.kind + "<br>");
+        document.write(dog.sound());
+
+
+        // 다음과 같은 자료를 담는 객체 person 을 만드세요
+        // name : 홍길동
+        // age : 40
+        // height: 166.7
+        // weight: 70
+        // addr : 대구
+        // gender : M
+        // 기능
+        // toString: function(){
+            // 현재 저장되어져있는 모든 속성을 alert()으로 출력합니다.
+        //}
+        // talk:function(){
+            //함수사용시 'name+" 님이 말합니다"가 출력될수 있도록 합니다.
+        //}
+
+
+        var person = {
+            name:"홍길동",
+            age: 40,
+            height:166.7,
+            weight:70,
+            addr:"대구",
+            gender:"M",
+            toString:function(){alert(person.name+"\n"+person.age+"\n"+person.height+
+                              "\n"+person.weight+"\n"+person.addr+"\n"+person.gender);},
+            talk:function(){
+                document.write(person.name+" 님이 말합니다<br>");
+            }
+            
+
+    }
+    document.write("<hr>");
+    person.toString();
+    person.talk();
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
