@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        td{ border:1px solid gray;}
+        table {height:200px;}
+    </style>
+    <hr>
+    <select id=color name=color>
+        <option value=blue selected>blue</option>
+        <option value=red>red</option>
+        <option value=orange>orange</option>
+        <option value=lightgray>lightgray</option>
+    </select>
+    <select id=num>
+        <option value=1 selected>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+    </select>
+    <button onclick=func()>적용</button>
+    <hr>
+
+
+    <table style="width:50%; margin:100px auto;border:1px solid gray;">
+        <tr>
+            <td id="one">1</td>
+            <td id="two">2</td>
+            <td id="three">3</td>
+            <td id="four">4</td>
+        </tr>
+    </table>
+    
+    <script>
+        function func(){
+            
+           
+            var sel1 = document.getElementById("color");
+            var color = sel1.options[sel1.selectedIndex].value;
+            
+            var sel2 = document.getElementById("num");
+            var num = sel2.options[sel2.selectedIndex].value;
+
+            num = parseInt(num);    //숫자형으로 변경
+
+            var one     = document.getElementById("one");
+            var two     = document.getElementById("two");
+            var three   = document.getElementById("three");
+            var four    = document.getElementById("four");
+
+            // var str = prompt("배경색,번호순으로 입력 : ");//red,4
+            // var arr = str.split(",");//[red,4]
+            // var color = arr[0];
+            // var num = parseInt(arr[1]);
+            switch (num)
+            {
+                case 1 :
+                    one.style.backgroundColor=color;
+                    break;
+                case 2 :
+                    two.style.backgroundColor=color;
+                    break;
+                case 3 :
+                    three.style.backgroundColor=color;
+                    break;
+                case 4 :
+                    four.style.backgroundColor=color;    
+                    break;
+                default :
+                    alert("잘못입력..");
+            }
+
+        } 
+    </script>
+
+</body>
+</html>

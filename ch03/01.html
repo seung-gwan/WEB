@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "tmp"></div>
+    <script>
+        
+        // var num1= prompt("첫번째 수 입력 : ");
+        // num1= parseInt(num1);
+        // var num2= prompt("두번째 수 입력 : ");
+        // num2= parseInt(num2);
+        
+        // if (vnum1>num2){
+        //     document.write("큰수 : " + num1);
+
+
+        // }
+
+
+        // else {
+        //     document.write("큰수 : " + num2);
+
+        // }
+
+        // 국영수 점수받아서 총점 60이상이고 각 부분점수가 40점 이상일때 합격을 출력 ! 그게 아니면 불합격
+
+        var num1= parseInt(prompt("국어점수 : "));      
+        var num2= parseInt(prompt("영어점수 : "));      
+        var num3= parseInt(prompt("수학점수 : "));
+        num4 = (num1+num2+num3)/3;
+
+
+        if (num1 >= 40 && num2 >= 40 && num3 >= 40 && num4 >= 60) {
+           alert("합격");
+
+
+        }
+        else {
+            alert("불합격");
+
+        }
+
+
+
+    </script>
+    
+
+
+
+
+
+
+</body>
+</html>

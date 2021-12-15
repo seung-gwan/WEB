@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- delete 연산자 : 속성멤버제거에 사용 -->
+    
+    <script>
+
+// var person = {
+//             name:"홍길동",
+//             age: 40,
+//             height:166.7,
+//             weight:70,
+//             addr:"대구",
+//             gender:"M",
+//             toString:function(){alert(person.name+"\n"+person.age+"\n"+person.height+
+//                               "\n"+person.weight+"\n"+person.addr+"\n"+person.gender);},
+//             talk:function(){
+//                 document.write(person.name+" 님이 말합니다<br>");
+//             }
+//         }
+//         delete person.age;  // age 속성 제거
+//         delete person.talk; // talk 기능 제거
+//     person.toString();
+
+
+
+    // delete 배열 요소 제거
+    // var arr= [1, 2, 3];
+    // delete arr[1];
+    // document.write(arr+"<br>");
+    // document.write(typeof arr[0]+"<br>");
+    // document.write(typeof arr[1]+"<br>");
+    // document.write(typeof arr[2]+"<br>");
+    // document.write(arr.length);
+
+
+    // 다음 span 태그에 person 의 멤버값들을 각각 넣어보세요.
+
+
+
+
+
+
+    </script>
+
+    <div>NAME : <span id="name"></span></div>
+    <div>AGE : <span id="age"></span></div>
+    <div>HEIGHT : <span id="height"></span></div>
+    <div>WEIGHT : <span id="weight"></span></div>
+    <div>ADDR : <span id="addr"></span></div>
+    
+    <button onclick="person.toString()">ToString()</button>
+
+    <script>
+
+var person = {
+             name:"홍길동",
+             age: 40,
+             height:166.7,
+             weight:70,
+             addr:"대구",
+             gender:"M",
+             toString:function(){alert(person.name+"\n"+person.age+"\n"+person.height+
+                               "\n"+person.weight+"\n"+person.addr+"\n"+person.gender);},
+             talk:function(){
+                 document.write(person.name+" 님이 말합니다<br>");
+
+             }
+            }
+
+            document.getElementById('name').innerHTML= person.name;
+            document.getElementById('age').innerHTML= person.age;
+            document.getElementById('height').innerHTML= person.height;
+            document.getElementById('weight').innerHTML= person.weight;
+            document.getElementById('addr').innerHTML= person.addr;
+
+    </script>
+
+
+
+</body>
+</html>
