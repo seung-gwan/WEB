@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table 테이블 만들기 , tr : 테이블행 , th : 제목(굵게표시,중앙배치) td : 내용 -->
+<hr>
+테이블 기본<br>
+<hr>
+<table border="1">		<!-- bordor 속성 테두리 지정 -->
+	<tr>				<!--  테이블 행 -->
+		<td>제목1</td>	<!--  행 제목 -->
+		<td>내용1</td>	<!--  행 내용 -->
+		<td>내용2</td>	<!--  행 내용 -->
+	</tr>
+	<tr>
+		<th>제목2</th>
+		<td>내용1</td>
+		<td>내용2</td>
+	</tr>
+</table>
+
+<br><br>
+<!-- table 전체 너비 width , 높이 height -->
+
+<table border="1" width="500" height=200>	
+	<tr height=20>					<!--  첫번째 행높이는 20픽셀 -->
+		<th width="50">제목1</th>	<!--  1번째 칸의 너비는 50픽셀 -->
+		<td>내용1</td>	
+		<td>내용2</td>	
+	</tr>
+	<tr height=100>					<!--  두번째 행높이는 100 픽셀 -->
+		<th>제목2</th>
+		<td width="100">내용1</td>
+		<td>내용2</td>
+	</tr>
+	<tr>
+		<th>제목2</th>
+		<td>내용1</td>
+		<td>내용2</td>
+	</tr>
+</table>
+
+<br><br>
+
+<!-- 테이블 제목 caption   -->
+
+<table border="1" width=400 height=100>
+<caption>
+테이블제목입니다<br>
+두번째줄입니다<br>
+</caption>
+	<tr>				
+		<td>test</td>
+		<td>test</td>
+		<td>test</td>
+	</tr>
+	<tr>					
+		<td>test</td>
+		<td>test</td>
+		<td>test</td>
+	</tr>
+</table>
+
+
+<br><br>
+
+
+
+
+<!--  테이블 문제01 -->
+<table border="1"> <caption>수업 시간표</caption>
+<tr> <td> 시 간 </td> <td>월요일</td> <td>화요일</td> <td>수요일</td> <td>목요일</td> </tr>
+<tr> <td> 1교시 </td> <td>국어</td> <td>역사</td> <td>사회</td> <td>영어</td> </tr>
+<tr> <td> 2교시 </td> <td>영어</td> <td>미술</td> <td>국어</td> <td>수학</td> </tr> 
+<tr> <td> 3교시 </td> <td>수학</td> <td>국어</td> <td>수학</td> <td>과학</td> </tr>  
+<tr> <td> 4교시 </td> <td>과학</td> <td>체육</td> <td></td> <td>사회</td> </tr>   
+</table>
+
+
+<hr>
+테이블 병합<br>
+<hr>
+
+<!-- 셀합치기  가로 합치기 colspan -->
+<table border="1" width="600" height="300">
+	<tr>				
+		<td colspan="3">1</td> <!-- 첫번째부터 오른쪽으로 3칸 셀합치기-->
+	<!-- <td>2</td> -->	
+	<!-- <td>3</td>  -->
+	</tr>
+	<tr>
+		<td>4</td>
+		<td colspan="2">5</td>
+	<!--<td>6</td> -->
+
+	</tr>
+	<tr>
+		<td colspan="2">7</td>	
+	<!--<td>8</td>	-->	
+		<td>9</td>		
+	</tr>
+		<tr>
+		<td>10</td>	
+		<td>11</td>		
+		<td>12</td>		
+	</tr>
+</table>
+
+
+<br><br>
+
+<!-- <문제> 셀합치기  가로 합치기 colspan  -->
+<table border="1" width="500" height="100">
+	<tr>				
+		<th width=50>이름</th>	
+		<td width=50> </td>	
+		<th width=50>연락처</td>	
+		<td width=50> </td>
+	</tr>
+	<tr>
+		<th>주소</th>
+		<td  colspan="3"></td>
+	</tr>
+	<tr>
+		<th>자기소개</th>
+		<td  colspan="3"></td>
+	</tr>
+</table>
+
+<br><br>
+
+<!-- 셀합치기  세로 합치기 rowspan-->
+<table border="1" width="600" height="300">
+	<tr>				
+		<td rowspan="2">1</td> 
+		<td rowspan="3">2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<!--<td>5</td>  -->
+		<!--<td>6</td>  -->
+		<td rowspan="2">7</td>	
+	 	<td rowspan="3">8</td>
+	</tr>
+	<tr>
+		<td rowspan="2">9</td>
+		<!--<td>10</td>	  -->
+		<!--<td>11</td>	  -->
+	 	<!--<td>12</td>	  --> 		
+	</tr>
+	<tr>
+		<!--<td>13</td>  -->
+		<td>14</td>	
+		<td>15</td>
+	 	<!--<td>16</td>	  --> 		
+	</tr>
+</table>
+
+<br><br>
+
+
+<!-- <문제> 셀합치기  세로 합치기 rowspan  -->
+<table border="1" width="600" height="300">
+	<tr>				
+		<th rowspan="3" width=150>JSP01 커리큘럼</th>
+		<td>1. HTML/CSS/JAVASCRIPT</td>
+		<td rowspan="6" width=50>비고</td>
+	</tr>
+		<tr>				
+		<td>2.JSP 기초문법  </td>
+	
+	</tr>
+		<tr>				
+		<td>3. 지시자와 태그 </td>
+		
+	</tr>
+		</tr>
+		<tr>				
+		<th rowspan="3">JSP02 커리큘럼</th>
+		<td>4 파일업로드 싸이트</td>
+		
+	</tr>
+		</tr>
+		<tr>				
+		<td>5 회원가입 싸이트</td>
+		
+	</tr>
+		</tr>
+		<tr>				
+		<td>6 게시판 싸이트</td>
+		
+	</tr>
+
+</table>
+
+<br><br>
+<!-- 문제 셀합치기 -->
+
+<table border="1"> <caption>수업 시간표1 (기본)</caption>
+<tr> <td>시 간</td> <td>월요일</td> <td>화요일</td> <td>수요일</td> <td>목요일</td> </tr>
+<tr> <td>1교시</td> <td></td> <td></td> <td></td> <td>웹응용</td> </tr>
+<tr> <td>2교시</td> <td>웹프로그래밍</td> <td></td> <td></td> <td>웹응용</td> </tr> 
+<tr> <td>3교시</td> <td>웹프로그래밍</td> <td></td> <td></td> <td>웹응용</td> </tr>  
+<tr> <td>4교시</td> <td></td> <td>자바스크립트</td><td>자바스크립트</td> <td></td> </tr>  
+<tr> <td>5교시</td> <td></td> <td></td> <td></td> <td></td> </tr>   
+</table>
+
+<br><br>
+<!-- 문제 셀합치기 -->
+<table border="1"> <caption>수업 시간표2 (셀 합치기)</caption>
+<tr> <td>시 간</td> <td>월요일</td> <td>화요일</td> <td>수요일</td> <td>목요일</td> </tr>
+<tr> <td>1교시</td> <td></td> <td></td> <td></td> <td rowspan=3>웹응용</td> </tr>
+<tr> <td>2교시</td> <td rowspan=2>웹프로그래밍</td> <td></td> <td></td>  </tr> 
+<tr> <td>3교시</td>  <td></td> <td></td>  </tr>  
+<tr> <td>4교시</td> <td></td> <td colspan=2>자바스크립트</td> <td></td> </tr>  
+<tr> <td>5교시</td> <td></td> <td></td> <td></td> <td></td> </tr>   
+</table>
+
+<hr>
+테이블 구조<br>
+<hr>
+<table border=“1”>
+  <caption> 학생성적 종합표 </caption>
+  <thead> 
+      <tr><th>구분</th> <th>학생 1</th> <th>학생 2</th> <th>학생 3</th><th>학생 4</th> <tr>  
+  </thead>     
+  <tbody> 
+     <tr> <td>중간고사</td> <td> 88 </td> <td> 95 </td> <td> 63 </td> <td> 77 </td> </tr> 
+     <tr> <td>기말고사</td> <td> 88 </td> <td> 85 </td> <td> 82 </td> <td> 66 </td></tr>  
+     <tr> <td>프로젝트</td> <td> 75 </td> <td> 94 </td> <td> 85 </td> <td> 82 </td></tr> 
+  </tbody>
+  <tfoot> 
+     <tr> <td>합계</td> <td> 251 </td> <td> 274 </td> <td> 229 </td> <td> 225 </td> </tr> 
+     <tr> <td>평균</td> <td> 83.7 </td> <td> 91.3 </td> <td> 76.3 </td> <td> 75 </td> </tr> 
+  </tfoot> 
+ </table> 
+ 
+ 
+
+
+
+
+
+</body>
+</html>
