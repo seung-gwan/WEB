@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!-- //테이블 행과 열의 수를 받아서 테이블을 생성해보세요
+    //border : 1px solid gray ; width:15px; height:15px로 처리합니다
+    //각 셀에 1부터 하나씩 증가된 값이 셀마다 표시가 되어야합니다 -->
+
+    <script>
+        function func(r,c){
+            
+            var row=document.getElementById(r).value;
+            var col=document.getElementById(c).value;
+            //alert("row : " + row + "\ncol : " + col);
+            //행렬을 받아서 테이블만들기
+            i=0; //tr태그증가에 사용되는 변수
+            j=0; //td태그증가에 사용되는 변수
+            cnt=1; //td태그에 값을 넣기 위해서 사용되는 변수 
+            document.write("<table>");
+            while(i<row)    //tr태그 증가를 위한 반복문
+            {
+                document.write("<tr>");
+                j=0;
+                while(j<col)
+                {
+                    document.write("<td style='border:1px solid gray;width:30px;height:30px;'><input style='width:30px;outline:none;border:0px;' value="+(cnt++)+"></td>");
+                    j++;
+                }
+                document.write("</tr>")
+                i++;
+            }
+                
+
+            document.write("</table>")
+
+
+        }
+    </script>
+
+    행 : <input type=text id=trow> <br>
+    열 : <input type=text id=tcol> <br> 
+    <button onclick="func('trow','tcol')">만들기</button>
+
+
+</body>
+</html>
