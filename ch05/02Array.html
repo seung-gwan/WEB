@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //1차원 배열의 배열요소는 자료형이다
+        //2차원 배열의 배열요소는 1차원 배열이다
+        //3차원 배열의 배열요소는 2차원 배열이다
+        //..
+        var ProfileList=[
+            ["홍길동","컴공",20,"대구"], 
+            ["남길동","기계","울산"],
+            ["동길동","서울"]
+        ];
+
+        document.write("길이 : "+ProfileList.length+"<br>");
+        document.write("첫번째 행의 길이 : "+ProfileList[0].length+"<br>");
+        document.write("두번째 행의 길이 : "+ProfileList[1].length+"<br>");
+        document.write("세번째 행의 길이 : "+ProfileList[2].length+"<br>");
+        document.write("<hr>");
+        for(i=0;i<ProfileList.length;i++) //3번반복(행의 길이만큼 반복)
+        {
+            for(j=0;j<ProfileList[i].length;j++)
+            {
+                document.write(ProfileList[i][j]+" ");
+            }
+            document.write("<hr>");
+        }
+
+    </script>
+
+
+
+</body>
+</html>

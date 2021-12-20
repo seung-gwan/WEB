@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수(매서드) : 수(Data)를 담아 처리하는 논리적인 공간
+        // 함수의 사용목적 : 모듈화 (재사용성)
+        // 함수의 기본형태
+        // 함수의 헤더 function func (num, num2)
+        // 함수의 바디 {                       }
+        
+
+
+        function func1() {  // 함수의 헤더 (함수명/매개변수)
+                            // 함수의 본체 
+            alert("Func1을 사용합니다~");
+        }
+
+        function func2(num1,num2){
+
+            alert(num1+"+"+num2 + "=" + (num1+num2));
+
+        }
+
+        function func3() {
+            var n1=document.getElementById("n1").value;
+            var n2=document.getElementById("n2").value;
+            n1=parseInt(n1);
+            n2=parseInt(n2);
+            var sum=n1+n2;
+            var result=document.getElementById("result");
+            result.innerHTML=sum;
+
+
+        }
+
+
+    </script>
+    <button onClick="func1()">FUNC1</button><br>
+    <a href="javascript:func1()">FUNC1</a><br>
+
+    <button onclick="func2(10,2)">Func2</button><br>
+
+    <button onclick="func3()">Func3</button>
+    <input id="n1"> + <input id="n2"> = <span id="result"></span>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var arr1 = [10, true, "String"];
+        // document.write(typeof arr1[0]+ "<br>");
+        // document.write(typeof arr1[1]+ "<br>");
+        // document.write(typeof arr1[2]+ "<br>");
+
+        // // 배열 생성 방법 Array();
+        // var arr2 = Array(1, true, "String");
+        // document.write("길이 : " + arr2.length+ "<br>");
+        
+        // // 배열의 동적 확장-1
+        // arr2[3] = 10.5;
+        // document.write("길이 : " + arr2.length+ "<br>");
+
+        // // 배열의 동적 확장-2
+        // arr2[6]= "TEST";
+        // document.write("길이 : " + arr2.length+ "<br>");
+        // document.write("<hr>");
+        // for (i = 0; i < arr2.length; i++) {
+        //     document.write(typeof arr2[i]+ "<br>")
+
+        // // }
+
+        // // 요소 삭제
+        // var arr3 = [10, 20, 30];
+
+        // arr3.pop();     // 마지막 요소 제거
+        // arr3.push(100); // 마지막 요소 추가
+        // arr3.push(200);
+        // arr3.splice(1,2);  // 특정 위치 요소 제거(1인자 : 삭제 시작 Idx, 2인자 : 삭제할 요소 개수)
+        // document.write("길이 : " + arr3.length + "<br>");
+        // for (i in arr3) {
+        //     document.write(arr3[i]+ " ");
+
+        // }
+
+        fruit = ["banana", "apply", "pie", "fig"];
+
+        // 현재 배열 끝에 peach, pear를 추가하세요.
+
+        fruit.push("peach","pear");
+        
+        
+        // // banana 뒤에 apple 를 제거 하세요.
+
+         fruit.splice(1,1);
+
+         
+
+
+
+        // // pear 를 pie 뒤에 추가하세요.
+        fruit.splice(2,0,'pear');
+
+        
+ 
+
+        // // 추가된 배열안의 각 요소들을 ul.li태그를 이용해서 출력해보세요.\
+        document.write("<ul>");
+        for (i in fruit) {
+            document.write("<li>"+ fruit[i]+"</li>");
+        }
+        document.write("</ul>");
+
+
+
+
+    </script>
+    
+</body>
+</html>

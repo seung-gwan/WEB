@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var student=[
+            ['강민성', '컴공', 'A+', 'B+'],
+            ['김정아', '수학', 'B+', 'A'],
+            ['이은준', '경영', 'C-' , 'B+'],
+            ['강민성', '컴공', 'D', 'A-'],
+            ['정우균', '컴공', 'A+', 'A+']
+        ]
+        // 위의 자바스크립트 배열을
+        // Table로 출력해보세요
+        // 중첩 for을 써서 출력합니다.
+
+        document.write("행길이 : " + student.length+"<br>");
+        document.write("1열 길이 : "+ student[0].length+ "<br>");
+        
+        document.write("<table style='width:50%;height:400px;'>");
+        for(i = 0; i < student.length; i++){
+            document.write("<tr>");
+                for(j = 0; j < student[i].length; j++){
+                    document.write("<td style='border:1px solid gray;'>"+student[i][j]+"</td>");        
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+    </script>
+    
+</body>
+</html>
