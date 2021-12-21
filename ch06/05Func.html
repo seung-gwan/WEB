@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // function func1(){
+
+        //     var num=10; // func1함수지역의 num생성
+        //     document.write("num의 type : " + typeof num + "<br>");
+
+
+        // }
+
+        // func1(); // func1()실행
+        // document.write("num의 type : " + typeof num + "<br>");
+
+            // 전역변수 : {} 밖에서 생성된 변수
+        //     var num =10;    // 전역변수 생성
+        //     document.write("num의 type : " +  num + "<br>");
+
+        // function func2()
+        // {
+
+        //     num=20; // num 전역변수에 값 변경
+        //     document.write("num의 type : " +  num + "<br>");
+
+
+        // }
+
+        // func2(); // func2()실행
+        // document.write("num의 type : " +  num + "<br>");
+
+
+        // 전역변수 vs 지역변수
+
+        // var num =10;    // 전역변수 생성
+        //     document.write("num의 type : " +  num + "<br>");
+
+        // function func2()
+        // {
+
+        //     num=20; // num 전역변수에 값 변경
+        //     document.write("num의  : " +  num + "<br>");
+        //     var num= 100; // 지역변수 num 생성, 지역변수 vs 전역변수 일때 지역변수를 따른다.
+        //                   // 지역변수 num 을 이후에 생성하더라도 함수내에 있는 모든 num은
+        //                   // var num 으로 생성한 순간 모두 지역변수로 처리된다.
+        //     document.write("num의  : " +  num + "<br>");
+
+
+        // }
+
+        // func2(); // func2()실행
+        // document.write("num의  : " +  num + "<br>");
+
+
+        // 지역에서 전역변수로 접근방법
+
+        var num =10;    // 전역변수 생성
+        
+
+        function func2()
+        {
+
+            num=20; // num 전역변수에 값 변경
+            document.write("지역 num : " +  num + "<br>");
+            var num= 100; // 지역변수 num 생성, 지역변수 vs 전역변수 일때 지역변수를 따른다.
+                          // 지역변수 num 을 이후에 생성하더라도 함수내에 있는 모든 num은
+                          // var num 으로 생성한 순간 모두 지역변수로 처리된다.
+            document.write("지역 num : " +  num + "<br>");
+            document.write("전역 num : " +  window.num + "<br>");
+            window.num=222;
+
+
+        }
+
+        func2(); // func2()실행
+        document.write("전역 num : " +  num + "<br>");
+    </script>
+
+    
+</body>
+</html>

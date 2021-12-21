@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+function createUL(){
+    //prompt로 리스트문자열을 5를 입력받아
+
+    var arr = [];
+
+    for(i=0;i<5;i++){
+        arr[i] = prompt("입력 : ");
+    }
+
+    code ="<ul>"
+        for(i=0;i<arr.length;i++){
+            code+="<li>"
+            code+=arr[i];
+            code+="</li>"
+        }
+    code += "</ul>"
+
+    var tg = document.getElementById("insertul");
+    tg.innerHTML=code;
+    //id가 insertul태그안에 
+    //<ul>
+    //    <li>입력한문자열1</li>
+    //    <li>입력한문자열2</li>
+    //    <li>입력한문자열3</li>
+    //    <li>입력한문자열4</li>
+    //    <li>입력한문자열5</li>
+    //</ul>을 넣어보세요
+    
+}
+</script>    
+
+<button onclick="createUL()">UL생성</button>
+<hr>
+<div id="insertul"></div>
+
+</body>
+</html>

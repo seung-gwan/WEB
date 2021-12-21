@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- 1예제 -->
+<!-- 
+<ul>
+    <li>첫번째 아이템입니다</li>
+    <li>두번째 아이템입니다</li>
+    <li>세번째 아이템입니다</li>
+    <li>네번째 아이템입니다</li>
+</ul>
+
+<script>
+
+    // 태그이름으로 접근
+    var Elli = document.getElementsByTagName("li");
+    document.write("현재 li 개수 : " + Elli.length);
+    for(i=0;i<Elli.length;i++){
+        //Elli.item(i).style.color="red";
+        Elli[i].style.color="blue";
+    }
+
+</script>
+ -->
+
+
+ <!-- 2예제 -->
+<style> td{ width:30px;height:30px; border:1px solid gray;} </style>
+<table style="border:1px solid gray;width:300px;height:200px;">
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+    </tr>
+</table>
+<script>
+
+    var trtg = document.getElementsByTagName("tr");
+    var tdtg = document.getElementsByTagName("td");
+    // for (i=0;i<tdtg.length;i++){
+    //     if(i%2==0){
+    //         tdtg.item(i).style.backgroundColor="orange";
+    //     }else{
+    //         tdtg.item(i).style.backgroundColor="green";
+    //     }
+    // }
+
+    // for (i=0;i<trtg.length;i++){
+    //     if(i%2==0){
+    //         trtg.item(i).style.backgroundColor="#15ff00";
+    //     }else{
+    //     trtg.item(i).style.backgroundColor="orange";
+    //     }
+    // }
+
+    for (i=0;i<tdtg.length;i++){
+        if(i%5==0){
+            tdtg.item(i).style.backgroundColor="orange";
+        }else if(i%3==0){
+        tdtg.item(i).style.backgroundColor="#15ff00";
+        }
+    }
+
+    alert(trtg.length);
+    alert(tdtg.length);
+
+
+    
+</script>
+
+</body>
+</html>
