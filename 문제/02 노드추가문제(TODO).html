@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Insert title here</title>
+    <style>
+        table {
+            width:500px; height:500; margin:100px auto; 
+            font-size:20px; font-family:"맑은 고딕, 돋움";
+            
+            }
+        td
+        {
+            border: 1px solid gray;
+            height:30px;
+            line-height:30px;
+        }
+        caption {margin:10px auto; background:skyblue; color:white; font-size:30px;}
+        input { border:0px;  }
+        input[type='text'] {width:400px; height:30px; } 
+        input[type='button'] {width:70px; height:30px;;border:0px solid gray; margin:0px;}
+        input[type='checkbox'] 
+        {width:20px; height: 20px; border:1px solid gray;margin-right:15px; line-height:20px;
+        }
+    </style>
+    <script>
+        var chkID=1;
+        var tdID=1;
+        function addList()
+        {
+            
+            /* 입력한 리스트내용  노드화   */
+            list = document.getElementById("do");
+            Node = document.createTextNode(list.value);
+            if(list.value!="")
+            {	
+                /*삽입될 위치 객체 가져옴  */
+                tbl = document.getElementById("tbl");
+    
+            /*태그 생성*/
+            trtag= document.createElement("tr")
+            tdtag= document.createElement("td")
+            tdtag.id="td"+tdID;
+            chktag= document.createElement("input")
+            chktag.setAttribute("type","checkbox");
+            chktag.setAttribute("onclick","CHKF(this)");
+            chktag.checked=false;		/*체크되었을때 처리*/
+            /*객체간 연결*/
+            tdtag.appendChild(chktag);
+            tdtag.appendChild(Node);
+            trtag.appendChild(tdtag);
+            tbl.appendChild(trtag);
+        
+            /*입력란 비움 */
+            list.value="";
+            chkID++;
+            tdID++;
+            }
+            
+        
+        }
+        
+        function CHKF(box)
+        {
+                if(box.checked==true)
+                {
+                    var td=box.parentNode;
+                    td.style.background="lightgray";
+                    td.style.color="white";
+                    td.style.textDecoration ="line-through";
+                    td.style.textDecorationColor="black";
+                }
+                else
+                {
+                    var td=box.parentNode;
+                    td.style.background="white";
+                    td.style.color="black";	
+                    td.style.textDecoration ="none";
+                }
+        }
+        
+    </script>
+    </head>
+    <body>
+    
+    <Form>
+    <table id=tbl>
+    <caption id=title>TO DO LIST</caption>
+        <tr>	
+            <td><input type="text" id=do onkeyup="javascript:if(window.event.keyCode==13){addList()}" >&nbsp;&nbsp;<input type=button onclick="addList()" value=추가></td>
+        </tr>
+    </table>
+    </Form>
+    </body>
+    </html>

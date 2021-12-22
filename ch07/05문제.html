@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    여행하고 싶은 지역 : <input id="num"><button id="num123" onclick="addp()">추가</button>
+    
+    <ul id ="n1">
+
+    </ul>
+    <script>
+        function addp(){
+
+        // 새 노드 추가(createElement() : 요소추가)
+        num0=document.createElement("li");
+        // 새 노드에 내용입력
+        num0.innerHTML=document.getElementById("num").value;
+        // 기존 노드 찾기
+        num1=document.getElementById("n1");
+        // 기존 노드에 새 노드 연결(appendChild();노드 마지막에 연결하기 함수)
+        num1.appendChild(num0);
+        // 텍스트 박스 초기화
+        num.value="";
+
+    }
+    </script>
+    
+</body>
+</html>

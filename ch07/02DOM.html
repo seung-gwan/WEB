@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <ul>
+        <li class="c1">첫번째 리스트</li>
+        <li>두번째 리스트</li>
+        <li class="c1">세번째 리스트</li>
+        <li class="c1">네번째 리스트</li>
+        <li>다섯번째 리스트</li>
+        <li class="c1">여섯번째 리스트</li>
+    </ul>
+    <p class=c1>
+        p태그 단락입니다~
+    </p> -->
+    
+    <!-- <script>
+        var c1 = document.getElementsByClassName("c1");
+        document.write("길이 : " + c1.length);
+        // c1[0].style.backgroundColor="lightgray";
+        // c1[2].style.backgroundColor="lightgray";
+        for(i=0;i<c1.length;i++){
+            c1[i].style.backgroundColor="lightgray";
+        }
+    </script> -->
+
+    <!-- form 요소에 접근 -->
+
+    <form>
+        <input type="text" name="userid" value="user0987">
+        <input type="password" name="pwd" value="0987">
+    </form>
+    <form id="frm3">
+        <input type="text" name="userid" value="user0987">
+        <input type="password" name="pwd" value="0987">
+    </form>
+
+    <script>
+        // 현재 페이지의 모든 품을 받음
+        var forms = document.forms
+        alert(forms[0][0].value+"<br>");
+        alert(forms[0][1].value+"<br>");
+        alert(forms[0][2].value+"<br><br>");
+
+        // alert 으로 두번째 form의 userid와 pwd의 value 를 출력합니다.
+        
+        
+        // alert(forms[1][0].value+"<br>");
+        // alert(forms[1][1].value+"<br>");
+
+        // id 부여해서 form 에 접근
+        var frm3 = document.getElementById("frm3");
+        alert(frm3[0].value);
+
+
+    </script>
+
+
+
+
+</body>
+</html>

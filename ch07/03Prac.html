@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        function addCart(frm){
+            var item=document.getElementById(frm);
+
+            var result=confirm("상품명 : "+item[0].name+"\n가격 : "+item[0].value+"\n장바구니로 이동할까요?");
+            if(result==true){
+                //상품정보를 처리하는 서버로 이동
+            }else{
+                //다시 현재페이지로 이동
+            }
+        }
+    </script>
+    <div class="row">
+
+        <div class="col-2 m-4">
+
+            <form id=item1>
+            <input type="hidden" name="300리터는 들어갈 가방" value="\300,000,000,000,000,000,000원">
+            <div class="card" style="width: 18rem;">
+                <img src="luggage-g883ecf5ec_1920.jpg" width=200px height=300px class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">300리터는 들어갈 가방</h5>
+                  <p class="card-text">300리터 안들어갑니다.</p>
+                  <span>\300,000,000,000,000,000,000원</span>
+                  <a href="#" onclick="addCart('item1')" class="btn btn-primary">장바구니 담기</a>
+                </div>
+              </div>
+            </form>
+            <form id=item2>
+                <div class="card" style="width: 18rem;">
+                    <input type="hidden" name="1000리터는 들어갈 가방" value="\300원">
+                    <img src="luggage-g883ecf5ec_1920.jpg" width=200px height=300px class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">1000리터는 들어갈 가방</h5>
+                      <p class="card-text">1000리터 안들어갑니다.</p>
+                      <span>\300원</span>
+                      <a href="#" onclick="addCart('item2')" class="btn btn-primary">장바구니 담기</a>
+                    </div>
+                  </div>
+                </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    
+</body>
+</html>
