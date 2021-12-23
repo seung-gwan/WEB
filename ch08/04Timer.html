@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="InsertTime()">START</button>
+    <button onclick="stopTime()">STOP</button>
+    <p id="date"></p>
+    
+    <script>
+
+        woker=null;
+
+        function InsertTime() {
+            // 지연시간이 지난이후 Function안의 로직을 실행
+            // setTimeout(실행시킬Function, 지연시간);
+            // setTimeout(test,2000);
+
+            // 지정된 시간주기로 Function 로직 실행
+            // setInterval(Function, 시간);
+
+           woker=setInterval(test, 1000);
+
+
+
+        }
+        function test() {
+
+           document.getElementById("date").innerHTML=Date();
+
+        }
+        function stopTime(){
+
+            clearInterval(woker);
+
+            document.getElementById("date").innerHTML="";
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

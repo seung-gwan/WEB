@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="startimg()">Start</button>&nbsp;
+    <button onclick="stopimg()">Stop</button>
+    <hr>
+    <div style="width:500px;height:100px;border:1px solid gray;padding:5;">
+        <img src="html.png" style="width:80px;height:80px;margin-top:5px;" id=imgtg>
+        
+    </div>
+
+<style>
+        img {
+            position:relative;
+            left:0px;
+        }</style>
+        <script>
+            w=null;
+        function startimg() {
+            w=setInterval(moving,1000);
+        }
+        function moving() {
+            setTimeout(right,0);
+            setTimeout(left,500);
+        }
+        function right() {
+            imgtg=document.getElementById("imgtg");
+            imgtg.style.left='80%';
+            imgtg.style.transition="0.5s";
+        }
+        function left() {
+            imgtg=document.getElementById("imgtg");
+            imgtg.style.left='0%';
+            imgtg.style.transition="0.5s";
+        }
+        function stopimg() {
+            clearInterval(w);   
+        }
+
+    </script>
+</body>
+</html>

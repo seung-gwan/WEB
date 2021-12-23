@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="openw1()">WIN OPEN</button>
+    <button onclick="closew1()">닫기</button>
+    <button onclick="openw2()">WIN OPEN</button>
+    <button onclick="closew2()">닫기</button>
+
+    <script>
+        w1=null;
+        function openw1(){
+            w1=window.open('http://www.google.com','w1','width=500,height=500');
+        }
+        function closew1(){
+            w1.close();
+        }
+        function openw2(){
+            w2=window.open('../ch07/03Prac.html','w2','width=500,height=500');
+        }
+        function closew2(){
+            w2.close();
+        }
+
+    </script>
+
+</body>
+</html>

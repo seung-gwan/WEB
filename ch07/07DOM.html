@@ -13,7 +13,7 @@
     button{width: 100%;height: 100%;}
 </style>
 <script>
-    i=1;
+    i=1; tid=1;
     function addrow() {
         
         // 연결할 테이블 찾기
@@ -23,6 +23,7 @@
         // tr 생성
 
         trtg=document.createElement("tr");
+        trtg.id="tr"+(tid);
 
         // td 생성
 
@@ -35,7 +36,10 @@
         // 삭제버튼 추가
 
         btn=document.createElement("button");
+
+        btn.setAttribute('onclick', "remove(tr"+tid+")");
         btn.innerHTML="-"
+        // - btn onclick 시 tr+tid 를 인자로 전달하는 remove 함수 호출
 
         // 삭제버튼 마지막 td 에 연결
 
@@ -45,8 +49,20 @@
 
         trtg.append(td1,td2,td3);
         tbltg.append(trtg);
+        tid++;
 
     }
+
+
+    function remove(tmp){
+        
+        //   tasdf=document.getElementById(tmp); // 삭제하려는 tr 요소 검색
+        //   tasdf.remove();
+        tmp.remove();
+        
+    }
+
+
 
 </script>
 
