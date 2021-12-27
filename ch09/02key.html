@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        HTML 내의 이벤트속성 사용
+        onkeyup : 키를 눌렀다 뗏을때
+        onkeydown: 키를 눌렀을때
+        onkeypress: 키를 눌르고있을때
+     -->
+
+     <!-- KEYUP : <input onkeyup="keyup(this)">
+     <hr>
+     <p id="result1"></p>
+     <hr>
+     KEYDOWN : <input onkeydown="keydown(this)">
+     <hr>
+     <p id="result2"></p>
+     KEYPRESS : <input onkeypress="keypress(this)">
+     <hr>
+     <p id="result3"></p>
+     <script>
+
+         function keyup(){
+            //  console.log(event.target.value);
+            var result=document.getElementById("result1");
+             result.innerHTML=event.target.value;
+            //result.innerHTML=event.keyCode;
+         }
+         function keydown(){
+            //  console.log(event.target.value);
+            var result=document.getElementById("result2");
+            //result.innerHTML=event.target.value;
+            result.innerHTML=event.keyCode;
+            console.log(event.keyCode);
+         }
+         function keypress(){
+            //  console.log(event.target.value);
+            var result=document.getElementById("result3");
+            //result.innerHTML=event.target.value;
+            result.innerHTML=event.keyCode;
+            console.log(event.keyCode);
+         }
+
+        //  이벤트 처리순서
+        // onkeydown 이벤트처리(Virtual Code값)
+        // onkeypress 이벤트처리(ASCII Code값)
+        // onkeyup 이벤트처리
+
+     </script> -->
+
+
+     <!-- <input id='txt' onkeydown="func1()">
+     <hr>
+     <div id=result></div>
+
+     <script>
+         function func1(){
+             var code=event.keyCode;
+             var dtg=document.getElementById("result");
+            
+             if(code==13){
+                dtg.innerHTML+=event.target.value+"<br>";
+                event.target.value="";
+             }
+         }
+     </script> -->
+
+
+     <!-- 
+         커서이동에 따른 이벤트 처리
+         UP : 38
+         DOWN : 40
+         LEFT : 37
+         RIGHT: 39
+      -->
+      <style>
+          td{width:30px;height:30px;
+           
+        }
+        input {
+            width:30px;
+            height:30px;
+            background-color:lightgray;
+            border:0px;
+            outline:none;
+        }
+      </style>
+      <table>
+          <tr>
+              <td><input id="0/0" onkeydown="test('0/0')"></td>
+              <td><input id="0/1" onkeydown="test('0/1')"></td>
+              <td><input id="0/2" onkeydown="test('0/2')"></td>
+          </tr>
+          <tr>
+            <td><input id="1/0" onkeydown="test('1/0')"></td>
+            <td><input id="1/1" onkeydown="test('1/1')"></td>
+            <td><input id="1/2" onkeydown="test('1/2')"></td>
+        </tr>
+        <tr>
+            <td><input id="2/0" onkeydown="test('2/0')"></td>
+            <td><input id="2/1" onkeydown="test('2/1')"></td>
+            <td><input id="2/2" onkeydown="test('2/2')"></td>
+        </tr>
+      </table>
+      <script>
+            var xpos=1;
+            var ypos=1;
+            var cur=document.getElementById(xpos+"/"+ypos);
+            cur.style.backgroundColor="blue";
+            cur.focus();
+
+            function test(cur)
+            {
+               
+                cur=document.getElementById(cur);
+
+                var code=event.keyCode;
+              
+                if(code==38)    //커서 UP 
+                {
+                    //현재 위치 배경색 변경
+                    cur.style.backgroundColor="lightgray";
+                    //x축한칸 위로 이동
+                    xpos--;
+                    if(xpos<=0)
+                        xpos=0;
+                    //위로 이동한 요소 노드 찾기
+                    cur=document.getElementById(xpos+'/'+ypos);
+                    //이동한 위치 배경색 변경
+                    cur.style.backgroundColor="blue";
+                    //포커스 맞추기
+                    cur.focus();
+                }else if(code==40)
+                {
+                    //현재 위치 배경색 변경
+                    cur.style.backgroundColor="lightgray";
+                    //x축한칸 위로 이동
+                    xpos++;
+                    if(xpos>=2)
+                        xpos=2;
+                    //위로 이동한 요소 노드 찾기
+                    cur=document.getElementById(xpos+'/'+ypos);
+                    //이동한 위치 배경색 변경
+                    cur.style.backgroundColor="blue";
+                    //포커스 맞추기
+                    cur.focus();
+                }else if(code==37) //LEFT
+                {
+                //현재 위치 배경색 변경
+                     cur.style.backgroundColor="lightgray";
+                    //x축한칸 위로 이동
+                    ypos--;
+                    if(ypos<=0)
+                        ypos=0;
+                    //위로 이동한 요소 노드 찾기
+                    cur=document.getElementById(xpos+'/'+ypos);
+                    //이동한 위치 배경색 변경
+                    cur.style.backgroundColor="blue";
+                    //포커스 맞추기
+                    cur.focus();
+                }
+                else if(code==39)   //RIGHT
+                {
+                     //현재 위치 배경색 변경
+                    cur.style.backgroundColor="lightgray";
+                    //x축한칸 위로 이동
+                    ypos++;
+                    if(ypos>=2)
+                        ypos=2;
+                    //위로 이동한 요소 노드 찾기
+                    cur=document.getElementById(xpos+'/'+ypos);
+                    //이동한 위치 배경색 변경
+                    cur.style.backgroundColor="blue";
+                    //포커스 맞추기
+                    cur.focus();
+                }
+
+              
+         
+        }
+      </script>
+       
+
+
+</body>
+</html>

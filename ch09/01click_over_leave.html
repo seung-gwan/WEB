@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 
+        HTML 내 이벤트 처리 속성 사용
+     -->
+     <!-- <style>
+         p {width: 300px;height: 100px;border: 1px solid gray;
+            font-size:32px;
+        }
+     </style>
+     <p id="p1" onclick="func1(this)" onmouseover="func2(this)"onmouseleave="func3(this)"> 기본 내용 </p>
+
+     <script>
+         var p1tg=document.getElementById("p1");
+        function func1() {
+
+           // alert(event.type+" "+event.target);
+           event.target.innerHTML="아야 왜 때려!";
+
+        }
+        function func2() {
+        
+            event.target.innerHTML="마우스Over(삐)";
+        
+        }
+        function func3() {
+        
+        event.target.innerHTML="마우스leave(뿌)";
+    
+    } -->
+
+
+
+    <!-- 
+        Javacript Event 처리 함수를 사용
+     -->
+
+
+     <!-- <style>
+        p {width: 300px;height: 100px;border: 1px solid gray;
+           font-size:32px;
+       }
+    </style>
+    <p id="p1"> 기본 내용 </p>
+
+    <script>
+        var p1tg=document.getElementById("p1");
+       
+        p1tg.addEventListener('click', function(){
+            p1tg.innerHTML="아야 왜 때려!";
+            //event.target.innerHTML="아야 왜 때려!"
+        });
+        p1tg.addEventListener('mouseover', function(){
+            p1tg.innerHTML="마우스Over!";
+        });
+
+        p1tg.addEventListener('mouseleave', function(){
+            p1tg.innerHTML="마우스leave!";
+        });
+
+
+     </script> -->
+
+     <button id="btn1">버튼1</button> <button id="btn2">버튼2</button>
+     <hr>
+     <div id=result style="width: 300px;height: 100px;border: 1px soild gray;">
+    
+    </div>
+    <script>
+        var b1tg=document.getElementById("btn1");
+        var b2tg=document.getElementById("btn2");
+
+        b1tg.addEventListener('click',function(){
+            result.innerHTML="<h2>버튼1클릭함</h2>";
+        });
+        b1tg.addEventListener('mouseover',function(){
+            result.innerHTML="<h2>버튼1Over</h2>";
+        });
+        b1tg.addEventListener('mouseleave',function(){
+            result.innerHTML="<h2>버튼1Leave</h2>";
+        });
+
+
+        b2tg.addEventListener('click',function(){
+            result.innerHTML="<h2>버튼2클릭함</h2>";
+        });
+        b2tg.addEventListener('mouseover',function(){
+            result.innerHTML="<h2>버튼2Over</h2>";
+        });
+        b2tg.addEventListener('mouseleave',function(){
+            result.innerHTML="<h2>버튼2Leave</h2>";
+        });
+
+    </script>
+    
+</body>
+</html>
