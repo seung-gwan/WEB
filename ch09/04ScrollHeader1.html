@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        body {margin: 0;height: 5000px;}
+
+
+        #header-meta{height: 20px;background-color: wheat;margin-bottom:5px;}
+    
+        #header-nav{    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    display: block;
+    height: 120px;
+    left: 0;
+    padding-right: 25px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    transition: all .2s ease-out;
+    background: linear-gradient(to bottom,#ffecdd 0,rgba(37,33,30,0) 100%);}
+   
+    #header-nav-hidden{    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    background-color: #f18e8e;
+    display: block;
+    height: 120px;
+    left: 0;
+    padding-right: 25px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;}
+
+        #nav-left{width: 100%;border:1px solid gray;}
+        #nav-center{width: 30%;border:1px solid gray;}
+        #nav-right{width: 100%;border:1px solid gray;}
+    </style>
+</head>
+<body>
+
+    <body>
+
+        <div id=>
+            <div id="header-meta">
+    
+            </div>
+            <nav id="header-nav-hidden" class="hidden">중요한건</nav>
+            <nav id="header-nav">
+                <div id="nav-left">1번</div>
+                <div id="nav-center">2번</div>
+                <div id="nav-right">3번</div>
+    
+            </nav>
+        </div>
+    
+        <script>
+
+            document.addEventListener('scroll',function(){
+                var pos=document.documentElement.scrollTop;
+                var navtg=document.getElementById("header-nav");
+                var nav_hidden=document.getElementById("header-nav-hidden");
+                if(pos>=100){
+                    navtg=nav_hidden;
+
+                }else{
+                    navtg.style.position='static'
+                }
+            })
+
+
+
+        </script>
+
+
+</body>
+</html>

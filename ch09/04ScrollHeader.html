@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{margin:0px; height: 5000px;}
+
+
+        #header-meta{height: 20px;background-color: wheat;margin-bottom:5px;}
+        nav{height: 60px;background-color: wheat;margin-bottom:5px;display: flex;}
+
+        #nav-left{width: 100%;border:1px solid gray;}
+        #nav-center{width: 30%;border:1px solid gray;}
+        #nav-right{width: 100%;border:1px solid gray;}
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="header-meta">
+
+        </div>
+        <nav id="header-nav">
+            <div id="nav-left"></div>
+            <div id="nav-center"></div>
+            <div id="nav-right"></div>
+
+        </nav>
+    </div>
+    <script>
+        document.addEventListener('scroll',function(){
+            var pos=document.documentElement.scrollTop;
+            var navtg=document.getElementById("header-nav");
+            if(pos>=15){
+                // nav 상단 fixed
+                navtg.style.position='fixed';
+                navtg.style.width="100%";
+                navtg.style.left='0px';
+                navtg.style.top='0px';
+                
+            }else{
+                // nav 다시 원위치(static)
+                navtg.style.position='static';
+            }
+        })
+    </script>
+    
+</body>
+</html>
