@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 라이브러리 외부CDN추가 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 노드조회 -->
+
+    <!-- <div id=d1>1 Helloworld</div>
+    <div id=d2>2 Helloworld</div>
+    <div id=d3>3 Helloworld</div>
+
+    <script>
+        // 자바스크립트
+        var d1tg=document.getElementById('d1');
+        d1tg.style.backgroundColor="red";
+        // 제이쿼리
+        // $('#d2').css('background-color','blue').css('color','white');
+        $('#d2').css({'background-color':'green','color':'red'});
+
+        //d3태그를 제이쿼리로 검색해서 width:200px;bg를 orange로 font-size를 32px 지정
+
+    </script> -->
+
+
+    <!-- JQ : each - 객체형 데이터 꺼내오기 -->
+    
+    <!-- <div class="c1"></div>
+
+    <script>
+        var dog={
+            "name":"poppi",
+            "age" : 3,
+            "kind":"dog",
+            "weight":"5kg"
+        }
+        $.each(dog,function(key,value){
+            document.write("KEY : " + key + " VALUE : " + value+"<br>");
+        })
+
+    </script> -->
+
+    <script>
+        // var obj=['TEST1','TEST2','TEST3'];
+
+        // $.each(obj,function(key,value){
+        //     document.write("KEY : " + key + " VALUE : " + value+"<br>");
+        // })
+
+        // var person={
+        //     "name":"hongildong",
+        //     "age" : 30,
+        //     "weight":"65kg",
+        //     "certificate":['정보처리기사','CCNA','네트워크관리사']
+        // }
+        // $.each(person,function(key,value){
+        //    // document.write("KEY : " + key + " VALUE : " + value+"<br>");
+        //    if(key=='certificate'){
+        //        document.write(value);
+        //    }
+        // })
+
+
+        var obj={"status":"DONE", "total":"8", "data":[{"cnt":"1","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 99 (남산동)","BZ_NM":"장수촌","MNU":"생오리구이, 오리불고기, 돼지갈비"},{"cnt":"2","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 105 (남산동)","BZ_NM":"대구 추어탕","MNU":"추어탕, 산곰장어 소금구이, 산곰장어 양념구이"},{"cnt":"3","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 106 (남산동)","BZ_NM":"남산동 이영옥 할매보쌈","MNU":"보쌈, 국밥, 닭계장, 수육"},{"cnt":"4","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 107-1 (남산동)","BZ_NM":"금강산보쌈","MNU":"보쌈, 국밥, 보쌈정식, 수육"},{"cnt":"5","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 109, 1층 (남산동)","BZ_NM":"서울보쌈","MNU":"보쌈, 국밥, 수육"},{"cnt":"6","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 111, 1층 (남산동)","BZ_NM":"화림보쌈","MNU":"보쌈, 국밥, 순대국밥, 수육"},{"cnt":"7","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 112 (남산동)","BZ_NM":"진주왕보쌈","MNU":"보쌈, 국밥, 순대, 수육"},{"cnt":"8","FD_CS":"(중구)남산동보쌈골목","GNG_CS":"중구 명덕로35길 120 (남산동, 점포1동 제2호)","BZ_NM":"여울목 김밥","MNU":"김밥"}]}
+        
+        $.each(obj,function(key,value){
+            // document.write("KEY : " + key + " VALUE : " + value+"<br>");
+            if(key=='data'){
+                document.write(value[0]+"<br>");
+
+                  
+           
+            }
+        })
+
+
+    </script>
+
+
+
+
+
+
+    
+</body>
+</html>

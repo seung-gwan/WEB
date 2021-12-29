@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{}
+        body{margin:0px;}
+        #wrapper{
+            height: 1000px;
+            position:relative;
+            top:0px;
+            left:0px;
+        }
+        #meta-header{height: 30px;background-color:beige ;margin-bottom: 5px;
+        line-height: 30px;}
+        #meta-header ul{
+            list-style:none;
+            padding:0px;
+            margin:0px;
+            text-align:right;
+            font-size:14px;
+        }
+        #meta-header li{
+            display: inline;
+            margin:0 15px;
+        }
+        #meta-header a{
+            text-decoration:none;
+            color:gray;
+        }
+        #meta-header #modal{
+            display: none;
+        }
+        #nav{height: 30px;background-color:beige ;margin-bottom: 5px;}
+        
+    </style>
+    <script>
+        var newdiv
+        var modal;
+        var zindex=9999;
+        function open_modal(){
+
+            // 배경을 어둡게
+            var bg=document.getElementById('wrapper');  // 배경요소
+            newdiv=document.createElement('div');       // div태그 생성
+            newdiv.style.position='absolute';           // wrapper 태그전체를 감쌈
+            newdiv.style.left="0px";
+            newdiv.style.top="0px";
+            newdiv.style.backgroundColor="black";       // 배경색 지정
+            newdiv.style.width="100%";
+            newdiv.style.height="1000px";
+            newdiv.style.opacity="0.3";
+            newdiv.style.zIndex=zindex;                 // 모든 태그들보다 z축 값을 높게 설정
+
+            //wrapper에 연결
+            bg.appendChild(newdiv);
+
+            // 숨겨진 modal 창 띄우기
+            modal=document.getElementById('modal');
+            modal.style.position='absolute';
+            modal.style.left='38%';
+            modal.style.top='25%';
+            modal.style.display="block";
+            modal.style.width='500px';
+            modal.style.height='400px';
+            modal.style.backgroundColor='white';
+            modal.style.zIndex=zindex+1;
+
+
+        }
+
+        function close_modal(){
+            // modal 창 display none;
+            modal.style.display='none';
+            // newdiv 을 삭제
+            newdiv.remove();
+
+        }
+    </script>
+</head>
+<body>
+
+    <div id="wrapper" >
+        <div id="meta-header">
+            <ul>
+                <li><a href="#" onclick="javascript:open_modal()">로그인</a></li>
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+            <div id=modal>
+                <a href="#" onclick="close_modal()">X</a>
+                <form>
+                    ID : <input><br>
+                    PW : <input><br>
+                    <input type=submit value="로그인">
+                </form>
+            </div>
+
+        </div>
+        <div id=nav>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
