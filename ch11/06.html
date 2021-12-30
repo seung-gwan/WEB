@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 제이쿼리 라이브러리 외부CDN추가 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+    <!-- 마우스이벤트 onclick,onmoseover,onmouseleave-->
+    
+    <!-- <div id=d1 style='width:400px;height:300px;border:1px solid gray;'></div>
+
+    <script>
+        $('#d1').on('click',function(){
+            $(this).css('background-color','black');
+        })
+        $('#d1').on('mouseover',function(){
+            $(this).css('background-color','gray');
+        })
+        $('#d1').on('mouseleave',function(){
+            $(this).css('background-color','white');
+        })
+    </script> -->
+
+    <!-- onkeyup/onkeydown/onkeypress -->
+
+    <style>
+        #d1{
+            width:100px;
+            height:100px;
+            border:1px solid gray;
+            border-radius: 50%;
+            position:relative;
+            left:0px;
+            top:0px;
+          
+        }
+
+        @keyframes moving{
+            0%{top:0px; animation-timing-function: ease-in;}
+            50%{top:500px; animation-timing-function: ease-out;}
+            100%{top:0px; animation-timing-function: ease-in;}
+        }
+    </style>
+    <button id=startbtn>START</button>&nbsp;
+    <button id=stopbtn>STOP</button>&nbsp;
+    <hr>
+    <div id=d1></div>
+   
+    <script>
+        $('#startbtn').on('click',function(){
+            $('#d1')
+            .css('animation-name','moving')
+            .css('animation-duration','2s')
+            .css('animation-iteration-count','infinite')
+            .css('animation-play-state','running');
+            
+        })
+        $('#stopbtn').on('click',function(){
+            $('#d1')
+            .css('animation-play-state','paused');
+        })
+        var horizon=0;
+        
+        $(document).on('keydown',function(){
+            if(event.keyCode==39)
+            {
+                horizon+=300;
+                $('#d1').css('transform','translate('+horizon+'px,0px)')
+                .css('transition','1s');
+            }else if(event.keyCode==37){
+                horizon-=300;
+                $('#d1').css('transform','translate('+horizon+'px,0px)')
+                .css('transition','1s');
+            }
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        #wrapper{width: 100%; height: 1000px;
+        position:relative;
+        top:0px;
+        left:0px;
+        border:1px solid gray;
+    }
+      #wrapper #modal{display:none;}
+
+    </style>
+    <script>
+        var divv;
+        var zindex=9999;
+        var mo;
+
+        function openmodal(){
+        var op=document.getElementById('wrapper');
+        divv=document.createElement('divv');
+        divv.style.position='absolute';
+        divv.style.left='0px';
+        divv.style.top='0px';
+        divv.style.backgroundColor='black';
+        divv.style.width='100%';
+        divv.style.height='1000px';
+        divv.style.opacity='0.3';
+        divv.style.zIndex=zindex;
+
+        op.appendChild(divv);
+
+        mo=document.getElementById('modal');
+            mo.style.position='absolute';
+            mo.style.left='38%';
+            mo.style.top='25%';
+            mo.style.display="block";
+            mo.style.width='500px';
+            mo.style.height='400px';
+            mo.style.backgroundColor='white';
+            mo.style.zIndex=zindex+1;
+        }
+        function closemodal(){
+            // 코드작성
+            mo.style.display='none';
+            divv.remove();
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="javascript:openmodal()">Modal</button>
+    <div id=wrapper>
+        <div id="modal">
+            <button onclick="javascript:closemodal()">종료</button>
+            모달창입니다
+        </div>
+    
+
+
+    </div>
+
+
+
+</body>
+</html>
