@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 제이쿼리 라이브러리 외부CDN추가 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <style>
+        *{}
+        body{margin:0px;}
+        #wrapper{}
+        header{height:60px;border:1px solid gray;}
+        content{
+            display:flex; margin-top:5px;
+            justify-content: space-between;
+        }
+        .contents{
+            width:48%;
+           
+            border:1px solid gray;
+          
+            margin:20px;
+            position:relative;
+            left:0px;
+            top:0px;
+            object-fit:contain;
+        }
+        content img{
+            width:100%;
+            height:100%;
+            object-fit: contain;
+        }
+        .menu1{
+            position:absolute;
+            left:10px;
+            top:10px;
+        }
+        .menu1 span{
+            display:block;
+            width:35px;
+            height:3px;
+            background-color: gray;
+            margin:5px;
+        }
+        .submenu
+        {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id='wrapper'>
+        <header></header>
+        <content>
+            <div class=contents>
+                
+                <div class="menu1">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
+                <ul class="submenu">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+                <img src=https://www.thombrowne.com/BWStaticContent/26000/600090e5-0af5-49ba-b61b-f2a5bc1f4c77_mens-desktop.jpg>                           
+            </div>
+
+            <div class=contents>
+                
+                <div class="menu1">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
+                <ul class="submenu">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+                <img src=https://www.thombrowne.com/BWStaticContent/26000/86c220c2-c3d6-4e2a-b707-56a04a300d92_womens-desktop.jpg>                           
+            </div>
+
+        </content>
+        <script>
+            var flag=false;
+            var zidx=9999;
+            var bg=$('<div class="bg"></div>');
+            bg.css('position','absolute')
+            .css('top','0px')
+            .css('left','0px')
+            .css('width','100%')
+            .css('height','100%')
+            .css('background-color','black')
+            .css('opacity','0.5')
+            .css('z-index',zidx);
+            $('.menu1').on('click',function(){
+                if(flag==false)
+                {
+                    //햄버거 메뉴 모양변경
+                    $(this).children('.top').css('transform','translate(0px,8px) rotate(45deg)').css('transition','0.3s');
+                    $(this).children('.middle').css('opacity','0').css('transition','0.3s');
+                    $(this).children('.bottom').css('transform','translate(0px,-8px) rotate(-45deg)').css('transition','0.3s');
+
+                    //햄버거 메뉴 zindex
+                    $(this).css('z-index',zidx+1);
+
+                    //햄버거 span 백그라운드 흰색
+                    $(this).children('span').css('background-color','white');
+                    
+                    //Contents에 백그라운드 추가
+                    $(this).parent().append(bg);
+
+                    //Submenu 추가 하기
+                    $(this).siblings('.submenu').css('display','block')
+                    .css('position','absolute')
+                    .css('left','80px')
+                    .css('top','100px')
+                    .css('color','white')
+                    .css('font-size','32px')
+                    .css('font-weight','400')
+                    .css('list-style','none')
+                    .css('padding','0px')
+                    .css('z-index',zidx+1)
+                    .css('opacity','1')
+                    flag=true;
+                }else
+                {
+                    //햄버거 메뉴 모양변경 
+                    $(this).children('.top').css('transform','translate(0px,0px) rotate(0deg)');
+                    $(this).children('.middle').css('opacity','1');
+                    $(this).children('.bottom').css('transform','translate(0px,0px) rotate(0deg)');
+                    
+                    //백그라운드 제거
+                    $(this).siblings('.bg').remove();
+
+                    //햄버거 span 백그라운드 회색
+                    $(this).children('span').css('background-color','gray');
+
+                    //Submenu 제거하기
+                    $(this).siblings('.submenu').css('opacity','0');
+
+                    flag=false;
+                }
+            })
+
+        </script>
+
+
+    </div>
+    
+</body>
+</html>
