@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 라이브러리 외부CDN추가 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <style>
+    
+        
+        body{margin:0px;}
+        #meta-header{background-color:antiquewhite;}
+        #nav{background-color:azure;}
+        #page-content{}
+        #footer{}
+    </style>
+    <div id='wrapper' class='container-fluid'>
+        <div id='header' >
+            <div id='meta-header' class='row' style="height:30px">
+                <div class='col-md-3'>
+                    <!-- 오프캔버스(LEFT) -->
+                    <a class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasTop">전체메뉴</a>
+
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasTopLabel">
+                      <div class="offcanvas-header">
+                        <h5 id="offcanvasTopLabel">Offcanvas top</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        ...
+                      </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class='col-md-6'></div>
+                <div class='col-md-3' style='text-align:right;'>
+                    <!-- 오프캔버스(RIGHT) -->
+                    <a class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">로그인</a>
+                    
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    
+                        <div class="offcanvas-header" style='margin:0px auto;'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                              </svg>
+                        </div>
+                        <div class="offcanvas-body">
+                            <!-- 폼 -->
+                            <form>
+                            <div id=login style="text-align:left;">
+                                <div class='row m-3'>
+                                    <div class='col'>
+                                        <label class="form-label">Email</label>
+                                        <input class='form-control' placeholder="example@example.com">
+                                    </div>
+                                </div>
+                                <div class='row m-3'>
+                                    <div class='col'>
+                                        <label class="form-label">Password</label>
+                                        <input type=password class='form-control' placeholder="Enter password">
+                                    </div>
+                                </div>
+                                <div class='row m-3'>
+                                    <div class='col-md-6'>
+                                        <input type='checkbox' class='form-check-input'>
+                                        &nbsp;<span>아이디 저장</span>
+                                    </div>
+                        
+                                    <div class='col-md-6'>
+                                        <input type='checkbox' class='form-check-input'>
+                                        &nbsp;<span>패스워드 저장</span> 
+                                    </div>
+                                </div>
+                                <div class='row m-3'>
+                                    <div class='col'>
+                                        <input type=submit value=LOGIN class='btn btn-primary form-control'>
+                                    </div>
+                                </div>
+                                <div class='row m-3'>
+                                    <div class='col'>
+                                        <button class='btn btn-secondary form-control'>JOIN</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        </div>    
+
+
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+            <div id='nav' class='row' style="height:70px">
+                <!-- 네비게이션바 추가 -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    
+                    <div class="container-fluid">
+                      <a class="navbar-brand me-3" href="#">Logo</a>
+                      
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active  me-3" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link  me-3" href="#">Link</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  me-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item  me-3">
+                            <a class="nav-link disabled">Disabled</a>
+                          </li>
+                        </ul>
+                        <form class="d-flex">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+        <script>
+            $(window).resize(function(){
+                if(window.outerWidth<540){
+                    $('#meta-header').css('height','100px');
+                    $('#nav').css('height','200px');
+                }else
+                {
+                    $('#meta-header').css('height','30px');
+                    $('#nav').css('height','70px');
+                }
+            })
+        </script>
+
+        <style>
+          img {
+            
+          }
+        </style>
+        <div id='page-content' class='row' >
+            
+          <content class='col-md-12' style=padding:0px;>
+              <!-- 캐러셀 추가 -->
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active data-bs-interval=2000">
+                    <img src="img/1banner.jpg" class="d-block w-100 img-fluid" alt="..." >
+                  </div>
+                  <div class="carousel-item"  data-bs-interval="2000">
+                    <img src="img/2banner.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item"  data-bs-interval="2000">
+                    <img src="img/3banner.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </content>
+            
+            <content style='margin-top:50px;'>
+              <!-- 카드 -->
+              <div class='row' >
+                <!-- 1 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>
+                <!-- 2 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>
+                <!-- 3 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>
+                <!-- 4 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>         
+              </div>
+            </content>   
+            <content style='margin-top:50px;'>
+              <!-- 카드 -->
+              <div class='row' >
+                <!-- 1 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>
+                <!-- 2 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>
+                <!-- 3 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>
+                <!-- 4 -->
+                <div class="card col" style="width: 18rem;">
+                  <div  style='height:200px;overflow:hidden;'>
+                    <img src="img/1.jpg"  class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">ITEM</h5>
+                    <a href="#" class="btn btn-primary w-100">Cart</a>
+                  </div>
+                </div>         
+              </div>
+            </content>   
+        </div>
+
+        <div id='footer' class='' style='height:300px;'>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
